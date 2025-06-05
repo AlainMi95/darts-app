@@ -1,0 +1,373 @@
+/* DartsAppModern.css */
+
+/* Hide number input spinners for .no-spin */
+.no-spin::-webkit-outer-spin-button, .no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spin[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.responsive-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 80vh;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.leaderboard-btn {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 120px;
+  border-radius: 7px;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: none;
+  letter-spacing: 0.01em;
+  transition: transform 0.12s, box-shadow 0.15s;
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  outline: none;
+}
+.leaderboard-btn:hover, .leaderboard-btn:focus {
+  background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+.leaderboard-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+
+@media (max-width: 600px) {
+  .responsive-overview {
+    max-width: 98vw;
+    min-height: 92vh;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    gap: 1rem;
+  }
+  .leaderboard-btn {
+    font-size: 1rem;
+    min-width: 90vw;
+    width: 100%;
+    padding: 0.75rem 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+  .game-init, .player-card, .scoreboard {
+    font-size: 0.97rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .responsive-overview {
+    max-width: 650px;
+    min-height: 80vh;
+    gap: 2.5rem;
+    padding: 2.5rem 2.5rem 0 2.5rem;
+  }
+  .leaderboard-btn {
+    font-size: 1.3rem;
+    min-width: 260px;
+    padding: 1.1rem 0;
+    border-radius: 12px;
+  }
+  .game-init, .player-card, .scoreboard {
+    font-size: 1.13rem;
+    padding: 1.2rem;
+  }
+}
+
+body, .darts-container {
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+@media (max-width: 600px) {
+  body, .darts-container {
+    padding: 1rem;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .player-card {
+    padding: 0.75rem;
+    min-width: auto;
+  }
+
+  .dart-multipliers button,
+  .dart-numbers button,
+  .bull-buttons button,
+  .control-btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .throw-box {
+    font-size: 1.5rem;
+    width: 80px;
+    padding: 0.75rem;
+  }
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.03rem;
+  margin-bottom: 0.03rem;
+  flex-wrap: wrap;
+}
+
+.scoreboard .player-card {
+  background: #1f1f1f;
+  border-radius: 8px;
+  padding: 1.1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: transform 0.3s;
+  font-size: 1.13rem;
+  margin: 0.3rem 0.15rem;
+  display: inline-block;
+  min-width: 38px;
+}
+
+.scoreboard .player-card h3,
+.scoreboard .player-card .stats-line,
+.scoreboard .player-card .throw-history,
+.scoreboard .player-card .throw-score {
+  margin: 0 0 0.08rem 0;
+  padding: 0;
+  line-height: 1.13;
+}
+
+.scoreboard .player-card .throw-score {
+  background: none;
+  border-radius: 0;
+  margin-right: 0.15rem;
+  padding: 0;
+}
+
+
+.scoreboard .player-card h3,
+.scoreboard .player-card .stats-line,
+.scoreboard .player-card .throw-history,
+.scoreboard .player-card .throw-score {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+.scoreboard .player-card .throw-score {
+  background: none;
+  border-radius: 0;
+  margin-right: 0.1rem;
+  padding: 0;
+}
+
+
+@media (max-width: 600px) {
+  .player-card {
+    padding: 0;
+    min-width: 20px;
+    font-size: 0.8rem;
+  }
+  .scoreboard {
+    gap: 0.02rem;
+    margin-bottom: 0.02rem;
+  }
+}
+
+.player-card.active {
+  border: 2px solid #00e5ff;
+  transform: scale(1.03);
+}
+
+.player-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.player-card .stats-line {
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.throw-history {
+  margin-top: 0.5rem;
+}
+
+.throw-score {
+  margin-right: 0.25rem;
+  background: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+
+.throw-display {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.throw-box {
+  font-size: 2rem;
+  padding: 1rem;
+  background: #1f1f1f;
+  border-radius: 8px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.throw-box.bust {
+  color: red;
+  border: 2px solid red;
+}
+
+.checkout-hint {
+  margin-top: 0.5rem;
+  color: #00e5ff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dartboard-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.dart-multipliers {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.dart-multipliers button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dart-multipliers button:hover {
+  background-color: #00e5ff;
+  color: #000;
+}
+
+.dart-numbers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  justify-items: center;
+  margin-bottom: 0;
+}
+
+.dart-numbers button {
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 60px;
+  background-color: #2e2e2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dart-numbers button:hover {
+  background-color: #00e5ff;
+  color: #000;
+}
+
+.bull-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.bull-buttons button {
+  padding: 0.75rem 1.25rem;
+  background-color: #2e2e2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.bull-buttons button:hover {
+  background-color: #00cc44;
+}
+
+.numpad {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.numpad .control-btn, .numpad button {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  min-width: unset;
+  max-width: 90px;
+  border-radius: 5px;
+}
+
+.control-btn {
+  background: #292929;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0.5rem;
+}
+
+.control-btn:hover {
+  background: #00e5ff;
+  color: #000;
+}
+
+.control-btn:disabled {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+}

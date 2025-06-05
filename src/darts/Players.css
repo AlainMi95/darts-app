@@ -1,0 +1,111 @@
+:root {
+  --primary: #2a2f3a;
+  --accent: #64d9a5;
+  --text: #f3f4f6;
+  --glow: 0 0 4px var(--accent);
+}
+
+.players-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+.players-header {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  margin-bottom: 1.5rem;
+}
+
+.add-player-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.player-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #444;
+  background: #1c1f26;
+  color: var(--text);
+}
+
+.add-btn {
+  background: var(--accent);
+  color: #0f1117;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.player-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1c1f26;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.player-name {
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.player-name:hover {
+  text-shadow: var(--glow);
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 500px) {
+  .add-player-section {
+    flex-direction: column;
+  }
+
+  .player-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .delete-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

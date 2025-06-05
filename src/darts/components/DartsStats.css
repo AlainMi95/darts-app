@@ -1,0 +1,204 @@
+.darts-stats {
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.leaderboard {
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  background-color: var(--background-color-hover);
+  font-weight: bold;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.leaderboard-item {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-item:hover {
+  background-color: var(--background-color-hover);
+}
+
+.leaderboard-cell {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.leaderboard-cell:first-child {
+  text-align: center;
+}
+
+.leaderboard-cell:nth-child(2) {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.checkout-percentage {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table-cell {
+    flex: 1;
+    padding: 0.3rem;
+  }
+  
+  .player-name {
+    flex: 1.5;
+  }
+  
+  .checkout {
+    min-width: 120px;
+  }
+}
+
+/* Recent games table */
+.stats-section:last-child {
+  margin-bottom: 0;
+}
+
+.recent-games-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.table-header {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 0.5rem;
+  background-color: var(--card-background);
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: var(--hover-color);
+}
+
+.table-cell {
+  flex: 1;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  padding: 0.5rem;
+}
+
+.date {
+  flex: 1;
+}
+
+.player1,
+.player2,
+.winner {
+  flex: 1.5;
+}
+
+.score1,
+.score2,
+.avg1,
+.avg2 {
+  flex: 1;
+}
+
+.checkout {
+  position: relative;
+  min-width: 150px;
+  flex: 1.5;
+}
+
+.checkout-percentage {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table-cell {
+    flex: 1;
+    padding: 0.3rem;
+  }
+  
+  .player1,
+  .player2,
+  .winner {
+    flex: 1.2;
+  }
+  
+  .checkout {
+    min-width: 120px;
+  }
+}

@@ -1,0 +1,129 @@
+:root {
+  --primary: #2a2f3a;
+  --accent: #64d9a5;
+  --text: #f3f4f6;
+  --glow: 0 0 2px var(--accent);
+  --bg-dark: #1c1f26;
+  --border: #444;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0e0f13, #39404e);
+  color: var(--text);
+}
+
+.leaderboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.leaderboard-header {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+  background-color: var(--bg-dark);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.leaderboard-header h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  text-shadow: var(--glow);
+}
+
+.leaderboard-header p {
+  font-size: 1.1rem;
+  color: #a0aec0;
+  margin: 0;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-table th {
+  background-color: var(--primary);
+  color: var(--accent);
+  text-shadow: var(--glow);
+  font-weight: 600;
+}
+
+.leaderboard-table td {
+  color: var(--text);
+}
+
+.leaderboard-table td.player-name {
+  text-align: left;
+  font-weight: 500;
+}
+
+.leaderboard-table td.rank {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Podium Highlight */
+.leaderboard-table tr:nth-child(1) td.rank { color: #ffd700; }
+.leaderboard-table tr:nth-child(2) td.rank { color: #c0c0c0; }
+.leaderboard-table tr:nth-child(3) td.rank { color: #cd7f32; }
+
+.leaderboard-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.no-players {
+  text-align: center;
+  padding: 1rem;
+  color: #9ca3af;
+}
+
+.leaderboard-footer {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .leaderboard-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    font-size: 0.8rem;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 1.6rem;
+  }
+}
