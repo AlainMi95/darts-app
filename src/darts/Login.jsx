@@ -16,7 +16,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      const from = location.state?.from?.pathname || "/darts";
+      const from = location.state?.from?.pathname || "/";
       navigate(from, { replace: true });
     } else {
       setInitializing(false);
@@ -28,7 +28,7 @@ const Login = () => {
     setError("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      const from = location.state?.from?.pathname || "/darts";
+      const from = location.state?.from?.pathname || "/";
       navigate(from, { replace: true });
     } catch (error) {
       setError("Invalid email or password");
